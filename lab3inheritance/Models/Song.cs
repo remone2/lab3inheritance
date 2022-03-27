@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace lab3inheritance.Models
 {
-    internal class Song
+    internal class Song : IMedia
     {
         public int Id { get; set; }
         public string Title { get; set; }
@@ -16,6 +16,11 @@ namespace lab3inheritance.Models
         public Song()
         {
             Customers = new List<Customer>();
+        }
+
+        public void Play()
+        {
+            Console.WriteLine($"Playing the song {Title} on your favourite music platform for {RunTime}");
         }
     }
 }
